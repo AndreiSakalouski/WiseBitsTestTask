@@ -15,7 +15,7 @@
 * Check status code is 200
 * Check success status is true
 * Check username and email in response are same as in request
-* Check message in response is correct
+* Check message in response is "User Successully created"
 
 ### Validate user saved to the database
 * Precondition: call /user/create endpoint with correct parameters
@@ -28,28 +28,28 @@
 * Precondition: call /user/create endpoint with correct parameters
 * Call /user/create endpoint with existing username and unique email
 * Check status code is 400
-* Check the response message is correct
+* Check the response message is "This username is taken. Try another."
 
 ### Validate user with existing email is not created
 * Precondition: call /user/create endpoint with correct parameters
 * Call /user/create endpoint with existing email and unique username
 * Check status code is 400
-* Check the response message is correct
+* Check the response message is "Email already exists"
 
 ### Validate user with empty username is not created
 * Call /user/create endpoint with empty username field and non empty email and password fields
 * Check status code is 400
-* Check the response message is correct
+* Check the response message is "A password for the user"
 
 ### Validate user with empty email is not created
 * Call /user/create endpoint with empty email field and non empty username and password fields
 * Check status code is 400
-* Check the response message is correct
+* Check the response message is "A username is required"
 
 ### Validate user with empty password is not created
 * Call /user/create endpoint with empty password field and non empty username and email fields
 * Check status code is 400
-* Check the response message is correct
+* Check the response message is "An Email is required"
 
 ## Possible improvements:
 * Create and set up testng.xml;
